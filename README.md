@@ -51,6 +51,10 @@ When the setup process is taking place, it is not recommended to stop the setup 
 
 If the program is running, you can directly access it via a client that has a browser such as a phone or PC. You can log in using the URL from your server/VPS, for example http://103.23.87.11:8910 or if you link it using a domain, you can use http://yourdomainname.com:8910
 
+If you encounter an error and cannot continue the setup and you also cannot reboot, you can use this command when that happens.
+```bash
+kill $(pgrep apt) ; dpkg --configure -a
+```
 ## Install browser
 Here I give an example using the Chrome browser
 1. Download Chrome using this official link. If the link is not working, you can check it directly on the [Google Chrome](https://google.com/chrome/?platform=linux) website
