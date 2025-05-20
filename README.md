@@ -51,7 +51,7 @@ When the setup process is taking place, it is not recommended to stop the setup 
 
 If the program is running, you can directly access it via a client that has a browser such as a phone or PC. You can log in using the URL from your server/VPS, for example http://103.23.87.11:8910 or if you link it using a domain, you can use http://yourdomainname.com:8910
 
-If you encounter an error and cannot continue the setup and you also cannot reboot, you can use this command when that happens.
+If you encounter an error and cannot continue the setup you can force stop the setup process and your system encounters an error and cannot reboot, you can use this command when that happens. and then repeat the setup process until it is complete
 ```bash
 kill $(pgrep apt) ; sudo dpkg --configure -a
 ```
