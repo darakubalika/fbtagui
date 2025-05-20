@@ -40,7 +40,9 @@ chmod +x setup
 ```bash
 ./setup
 ```
-SHA256sum
+you can start the setup
+
+## SHA256sum
 ```bash
 4cdbed54e8e83ab4ca363bdb5190a97987b944413ea0ca59a5f41640a6a7f9bf
 ```
