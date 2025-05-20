@@ -84,3 +84,13 @@ Example:
 "fbta setpasswd"
 "fbta --setwalpp image.jpg"
 ```
+
+## Screenshots
+
+<p align="center">
+  <img src="images/desktop.png" width="80%" height="80%">
+</p>
+
+<p align="center">
+  <img src="images/browser.png" width="80%" height="80%">
+</p>
