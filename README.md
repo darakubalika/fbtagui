@@ -53,7 +53,7 @@ If the program is running, you can directly access it via a client that has a br
 
 If you encounter an error and cannot continue the setup and you also cannot reboot, you can use this command when that happens.
 ```bash
-kill $(pgrep apt) ; dpkg --configure -a
+kill $(pgrep apt) ; sudo dpkg --configure -a
 ```
 ## Install browser
 Here I give an example using the Chrome browser
