@@ -40,7 +40,7 @@ chmod +x setup
 ```
 SHA256sum
 ```bash
-2f6e18d53a398e18e5961ed546ed1469fd3b9b40a368e19b361f4dd994e6843a
+4cdbed54e8e83ab4ca363bdb5190a97987b944413ea0ca59a5f41640a6a7f9bf
 ```
 ## Important
 When the setup process is taking place, it is not recommended to stop the setup process forcibly because it can cause errors in your system. The solution if you experience being stuck in the checking or loading process for several hours even though your connection is secure, you can reboot your system and do the setup process again.
