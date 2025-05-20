@@ -63,7 +63,7 @@ curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.de
 ```
 2. Install chrome
 ```bash
-apt install ./google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb -y
 ```
 3. Add chrome in the panel
 4. Edit the Google Chrome launcher so that it can be used.
