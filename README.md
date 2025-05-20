@@ -1,7 +1,7 @@
 <h1 align='center'>Welcome</h1>
 
 <div align="center">
-<img src="https://telegra.ph/file/9a2ef1310014cea3be04e.jpg" alt="ELAINA MD" width="300" />
+<!-- <img src="https://telegra.ph/file/9a2ef1310014cea3be04e.jpg" alt="ELAINA MD" width="300" /> --->
 <p align="center">
  <img src="https://komarev.com/ghpvc/?username=darakubalika&color=blue&label=Views" />
  <a href="https://github.com/darakubalika/fbtagui/blob/master/LICENSE"><img src="https://img.shields.io/github/license/darakubalika/fbtagui.svg?style=flat-square" alt="License"></a>
