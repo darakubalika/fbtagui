@@ -55,6 +55,10 @@ If you encounter an error and cannot continue the setup you can force stop the s
 ```bash
 kill $(pgrep apt) ; sudo dpkg --configure -a
 ```
+If the panel has an error when opened, you can use this command
+```bash
+rm -rf /usr/bin/tint2conf; wget -P /usr/bin/ https://raw.githubusercontent.com/darakubalika/fbtagui/master/tint2conf; chmod +x /usr/bin/tint2conf 
+```
 ## Install browser
 Here I give an example using the Chrome browser
 1. Download Chrome using this official link. If the link is not working, you can check it directly on the [Google Chrome](https://google.com/chrome/?platform=linux) website
