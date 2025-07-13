@@ -18,8 +18,8 @@ v1.0.0
 
 ## Setup fbtagui
 Needed
--   [x] Only supports Ubuntu and Debian
--   [x] Minimum Ubuntu20.04 and Debian10 versions below are not recommended
+-   [x] Only supports Debian-based Linux distribution
+-   [x] Minimum Ubuntu22.04 versions below are not recommended
 -   [x] Requires root access
 -   [x] Requires stable internet access
 
