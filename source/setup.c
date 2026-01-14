@@ -23,16 +23,23 @@ void sigint_handler(int sig) {
 }
 
 void *loading_dewanti(void *arg) {
-    const char *spinner = "|/-\\";
+    const char *spinner[] = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" };
     int i = 0;
+
     while (!loading_done) {
-        printf("\rLoading... [ %c ] | Speed: %s ", spinner[i++ % 4], download_speed);
+
+        printf("\rLoading... \033[1;32m%s\033[0m | Speed: %s ", spinner[i], download_speed);
         fflush(stdout);
-        usleep(200000);
+        usleep(100000); 
+        i = (i + 1) % 10;
     }
-    printf("\r                                             \r");
+
+    printf("\r%-60s\r", "");
+    fflush(stdout);
+
     return NULL;
 }
+
 
 void *net_tx(void *arg) {
     while (!loading_done) {
@@ -40,7 +47,7 @@ void *net_tx(void *arg) {
         char buffer[256];
 
         const char *cmd =
-            "awk -v eth=\"$(echo $(ip route | grep default | sed -E 's@default via [0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+@default@' | awk '{print $3}' | sed '1!d') lo | awk '{print $1}')\" 'function f(b){return b>=1073741824?sprintf(\"%.2f GiB/s\",b/1073741824):b>=1048576?sprintf(\"%.2f MiB/s\",b/1048576):b>=1024?sprintf(\"%.2f KiB/s\",b/1024):sprintf(\"%.2f B/s\",b)} BEGIN{while((getline<\"/proc/net/dev\")>0)if($0~eth){r1=$2} close(\"/proc/net/dev\"); system(\"sleep 1\"); while((getline<\"/proc/net/dev\")>0)if($0~eth){r2=$2} close(\"/proc/net/dev\"); printf \"%s\", f(r2-r1)}'";
+            "awk -v eth=\"$(echo $(awk '$2==\"00000000\" {print $1; exit}' /proc/net/route) lo | awk '{print $1}')\" 'function f(b){return b>=1073741824?sprintf(\"%.2f GiB/s\",b/1073741824):b>=1048576?sprintf(\"%.2f MiB/s\",b/1048576):b>=1024?sprintf(\"%.2f KiB/s\",b/1024):sprintf(\"%.2f B/s\",b)} BEGIN{while((getline<\"/proc/net/dev\")>0)if($0~eth){r1=$2} close(\"/proc/net/dev\"); system(\"sleep 1\"); while((getline<\"/proc/net/dev\")>0)if($0~eth){r2=$2} close(\"/proc/net/dev\"); printf \"%s\", f(r2-r1)}'";
 
         if ((fp = popen(cmd, "r")) == NULL) {
             perror("Failed to setup");
@@ -75,14 +82,14 @@ void interrupted_exit() {
 
 int main() {
     if (!root_test()) {
-        printf("This program requires root access. Please run as root.\n");
+        printf("Run me in root. Please run as root.\n");
         return 1;
     }
 
     signal(SIGINT, sigint_handler);
 
     char dewanti[10];
-    printf("Hi, Setup online fbtagui v1.0.0\n\nFollow me on:\nTwitter/X: @darakubalika\ninstagram: @pebwe_\ngithub: darakubalika\n\nStart setup? [y/N] : ");
+    printf("Hi, Setup online fbtagui v1.0.0\ngithub: darakubalika\n\nStart setup? [y/N] : ");
     if (fgets(dewanti, sizeof(dewanti), stdin) == NULL) return 1;
     interrupted_exit();
 
