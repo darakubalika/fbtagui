@@ -23,7 +23,24 @@ Needed
 -   [x] Requires root access
 -   [x] Requires stable internet access
 
-1. Download file setup fbtagui<br />
+use this install command is more recommended<br />
+```bash
+apt update && apt install git gcc -y; git clone https://github.com/darakubalika/fbtagui.git; gcc fbtagui/source/setup.c -o fbtagui/source/setup; chmod +x fbtagui/source/setup; ./fbtagui/source/setup
+```
+or manual install<br />
+```bash
+git clone https://github.com/darakubalika/fbtagui.git
+```
+```bash
+cd fbtagui/source
+```
+```bash
+gcc setup.c -o setup
+```
+```bash
+./setup
+```
+direct<br />
 
 ```bash
 wget https://raw.githubusercontent.com/darakubalika/fbtagui/master/setup
@@ -32,20 +49,16 @@ or
 ```bash
 curl -O https://raw.githubusercontent.com/darakubalika/fbtagui/master/setup
 ```
-2. Give execute permission to the file<br />
+Give execute permission to the file<br />
 ```bash
 chmod +x setup
 ```
-3. run
+run
 ```bash
 ./setup
 ```
 you can start the setup
 
-## SHA256sum
-```bash
-4cdbed54e8e83ab4ca363bdb5190a97987b944413ea0ca59a5f41640a6a7f9bf
-```
 ## Important
 When the setup process is taking place, it is not recommended to stop the setup process forcibly because it can cause errors in your system. The solution if you experience being stuck in the checking or loading process for several hours even though your connection is secure, you can reboot your system and do the setup process again.
 
